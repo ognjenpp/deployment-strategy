@@ -1,0 +1,25 @@
+name: Release
+run-name: Release ${{ github.event.inputs.release-candidate-version }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-candidate-version:
+        description: 'Release candidate version in format rX.X.X'
+        required: true
+      choice-env:
+        type: choice
+        description: Choose environment
+        options:
+          - Test
+          - Bugfix
+          - Staging
+          - Demo
+          - Production
+jobs:
+  test:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4

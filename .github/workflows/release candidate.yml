@@ -1,0 +1,57 @@
+name: Release candidate
+run-name: Release candidate ${{ github.event.inputs.release-candidate-version }}
+
+on:
+  workflow_dispatch:
+    inputs:
+      release-candidate-version:
+        description: 'Release candidate version in format rX.X.X'
+        required: true
+      cosmos-version:
+        description: 'Cosmos service version in format vX.X.X'
+        required: true
+        default: latest
+      cosmos-check:
+        description: 'Check if this service should be deployed'
+        type: boolean
+      hubble-version:
+        description: 'Cosmos service version in format vX.X.X'
+        required: true
+        default: latest
+      hubble-check:
+        description: 'Check if this service should be deployed'
+        type: boolean
+      stardust-version:
+        description: 'Cosmos service version in format vX.X.X'
+        required: true
+        default: latest
+      stardust-check:
+        description: 'Check if this service should be deployed'
+        type: boolean
+      frontier-version:
+        description: 'Cosmos service version in format vX.X.X'
+        required: true
+        default: latest
+      frontier-check:
+        description: 'Check if this service should be deployed'
+        type: boolean
+      nebula-version:
+        description: 'Cosmos service version in format vX.X.X'
+        required: true
+        default: latest
+      nebula-check:
+        description: 'Check if this service should be deployed'
+        type: boolean
+      choice-env:
+        type: choice
+        description: Choose environment
+        options:
+          - Staging
+          - Production
+jobs:
+  test:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
