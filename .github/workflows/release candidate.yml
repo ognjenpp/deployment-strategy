@@ -9,24 +9,14 @@ on:
         required: true
       cosmos-version:
         description: 'Cosmos service version in format vX.X.X'
-        required: true
-        default: latest
       hubble-version:
         description: 'Cosmos service version in format vX.X.X'
-        required: true
-        default: latest
       stardust-version:
         description: 'Cosmos service version in format vX.X.X'
-        required: true
-        default: latest
       frontier-version:
         description: 'Cosmos service version in format vX.X.X'
-        required: true
-        default: latest
       nebula-version:
         description: 'Cosmos service version in format vX.X.X'
-        required: true
-        default: latest
 jobs:
   test:
     name: Release
