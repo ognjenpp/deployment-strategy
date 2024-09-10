@@ -11,37 +11,22 @@ on:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      cosmos-check:
-        description: 'Check if this service should be deployed'
-        type: boolean
       hubble-version:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      hubble-check:
-        description: 'Check if this service should be deployed'
-        type: boolean
       stardust-version:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      stardust-check:
-        description: 'Check if this service should be deployed'
-        type: boolean
       frontier-version:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      frontier-check:
-        description: 'Check if this service should be deployed'
-        type: boolean
       nebula-version:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      nebula-check:
-        description: 'Check if this service should be deployed'
-        type: boolean
       choice-env:
         type: choice
         description: Choose environment
