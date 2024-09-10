@@ -1,5 +1,5 @@
-name: Release
-run-name: Release ${{ github.event.inputs.release-candidate-version }}
+name: Deployment
+run-name: Deployment - ${{ github.event.inputs.choice-env }} ${{ github.event.inputs.release-candidate-version }}
 
 on:
   workflow_dispatch:
