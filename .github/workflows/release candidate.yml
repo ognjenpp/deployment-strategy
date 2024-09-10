@@ -27,12 +27,6 @@ on:
         description: 'Cosmos service version in format vX.X.X'
         required: true
         default: latest
-      choice-env:
-        type: choice
-        description: Choose environment
-        options:
-          - Staging
-          - Production
 jobs:
   test:
     name: Release
