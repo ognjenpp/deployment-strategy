@@ -10,13 +10,13 @@ on:
       cosmos-version:
         description: 'Cosmos service version in format vX.X.X'
       hubble-version:
-        description: 'Cosmos service version in format vX.X.X'
+        description: 'Hubble service version in format vX.X.X'
       stardust-version:
-        description: 'Cosmos service version in format vX.X.X'
+        description: 'Stardust service version in format vX.X.X'
       frontier-version:
-        description: 'Cosmos service version in format vX.X.X'
+        description: 'Frontier service version in format vX.X.X'
       nebula-version:
-        description: 'Cosmos service version in format vX.X.X'
+        description: 'Nebula service version in format vX.X.X'
 jobs:
   test:
     name: Release
