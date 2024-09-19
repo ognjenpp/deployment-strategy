@@ -39,37 +39,3 @@ jobs:
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: 'trivy-results.sarif'
-
-      # - uses: anchore/scan-action@v3
-      #   id: scan
-      #   with:
-      #     image: "nginx:latest"
-      #     fail-build: false
-      #     output-format: sarif
-      # - name: upload Anchore scan SARIF report
-      #   uses: github/codeql-action/upload-sarif@v2
-      #   with:
-      #     sarif_file: ${{ steps.scan.outputs.sarif }}
-      # - name: Create SBOM
-      #   uses: anchore/sbom-action@v0
-      #   with:
-      #     format: spdx-json
-      #     output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
-
-      # - name: Scan SBOM
-      #   id: scan
-      #   uses: anchore/scan-action@v3
-      #   with:
-      #     fail-build: false
-      #     sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
-      
-      # - name: upload Anchore scan SARIF report
-      #   uses: github/codeql-action/upload-sarif@v2
-      #   with:
-      #     sarif_file: ${{ steps.scan.outputs.sarif }}
-
-      # - name: Docker Scout Quickview and CVEs
-      #   uses: docker/scout-action@v1
-      #   with:
-      #     command: cves
-      #     image: nginx:latest
