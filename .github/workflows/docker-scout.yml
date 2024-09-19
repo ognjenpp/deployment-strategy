@@ -20,12 +20,12 @@ jobs:
           docker pull nginx:latest
 
       # Step 4: Use Docker Scout to analyze the locally built image
-      # - name: Analyze with Docker Scout
-      #   run: |
-      #     docker scout cves nginx
+      - name: Analyze with Docker Scout
+        run: |
+          docker scout cves nginx:latest
 
-      - name: Docker Scout Quickview and CVEs
-        uses: docker/scout-action@v1
-        with:
-          command: cves
-          image: nginx:latest
+      # - name: Docker Scout Quickview and CVEs
+      #   uses: docker/scout-action@v1
+      #   with:
+      #     command: cves
+      #     image: nginx:latest
