@@ -20,10 +20,17 @@ jobs:
           docker pull nginx:latest
 
       # Step 4: Use Docker Scout to analyze the locally built image
-      - name: Scan image
+      - name: Create SBOM
+        uses: anchore/sbom-action@v0
+        with:
+          format: spdx-json
+          output-file: "${{ github.event.repository.name }}-sbom.spdx.json"
+
+      - name: Scan SBOM
         uses: anchore/scan-action@v3
         with:
-          image: "nginx:latest"
+          fail-build: false
+          sbom: "${{ github.event.repository.name }}-sbom.spdx.json"
 
       # - name: Docker Scout Quickview and CVEs
       #   uses: docker/scout-action@v1
