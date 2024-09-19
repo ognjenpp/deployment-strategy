@@ -1,0 +1,31 @@
+name: Docker Scout Analysis
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  docker-scout-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout your repository
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # Step 3: Build your Docker image locally
+      - name: Build Docker Image
+        run: |
+          docker pull nginx:latest
+
+      # Step 4: Use Docker Scout to analyze the locally built image
+      # - name: Analyze with Docker Scout
+      #   run: |
+      #     docker scout cves nginx
+
+      - name: Docker Scout Quickview and CVEs
+        uses: docker/scout-action@v1
+        with:
+          command: cves
+          image: nginx:latest
